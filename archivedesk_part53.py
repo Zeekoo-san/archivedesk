@@ -1,0 +1,28 @@
+# === Stage 53: Add command help text and usage examples ===
+# Project: ArchiveDesk
+def print_help():
+    """Print command help text and usage examples for ArchiveDesk."""
+    print("=" * 60)
+    print("ArchiveDesk - Records Archive Management System")
+    print("=" * 60)
+    print("\nUsage:")
+    print("  python archive_desk.py <command> [arguments]")
+    print()
+    print("Commands:")
+    print("  add_document      Add a new document to the archive")
+    print("  list_documents    List all archived documents")
+    print("  search            Search documents by keyword or tag")
+    print("  view_document     View details of a specific document")
+    print("  apply_retention   Apply retention rules and purge expired docs")
+    print("  export_csv        Export archive to CSV file")
+    print("  generate_report   Generate audit history report")
+    print("  help              Show this help message")
+    print()
+    print("Examples:")
+    print('  python archive_desk.py add_document --title "Meeting Notes" --date "2024-01-15"')
+    print('  python archive_desk.py search --keyword "quarterly report"')
+    print('  python archive_desk.py list_documents --tag "financial"')
+    print("  python archive_desk.py view_document --id doc_003")
+    print("  python archive_desk.py apply_retention --action purge_expired")
+    print("  python archive_desk.py export_csv --output reports/archive.csv")
+    print("=" * 60)
