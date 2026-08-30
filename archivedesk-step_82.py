@@ -1,0 +1,22 @@
+# === Stage 82: Add an end-to-end demo function that prints a complete walkthrough ===
+# Project: ArchiveDesk
+def demo():
+    ar = ArchiveDesk()
+    ar.add_tag("urgent")
+    ar.add_tag("finance")
+    doc = Document("invoice-2024-01.pdf", "Total payment due", "finance", "urgent")
+    ar.store(doc)
+    ar.add_retention_rule("finance", 10, "year", "destroy")
+    ar.add_retention_rule("urgent", 5, "year", "archive")
+    ar.check_retentions()
+    ar.store(Document("memo-001.txt", "Team meeting notes", "urgent"))
+    ar.add_audit_event("user1", "Stored invoice-2024-01.pdf")
+    ar.add_audit_event("user2", "Checked retentions")
+    results = ar.search("invoice")
+    print(f"Stored: {len(ar.documents)}")
+    print(f"Tags: {ar.tags}")
+    print(f"Retention rules: {ar.rules}")
+    print(f"Retentions checked: {ar.retentions_checked}")
+    print(f"Audit events: {ar.events}")
+    print(f"Search results for 'invoice': {results}")
+    print("ArchiveDesk demo complete.")
